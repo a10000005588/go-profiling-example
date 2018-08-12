@@ -6,6 +6,16 @@ The example code for using go profiling tool .
 The silde in slideshare introduce the using of pprof and visualization tools.
 https://www.slideshare.net/WilliamLin23/go-profiling
 
+## Prequisite for using pprof to generate report:
+
+### install `graphviz`
+
+In MacOs:
+`brew install graphviz`
+
+In Linux:
+`sudo apt-get install -y graphviz`
+
 ## In example 1: count a number by 3 counter running synchronously.
 
 ### 1. start the program with a flag with cpuprofile name:
@@ -67,3 +77,20 @@ you can check your service status via:
 `go tool pprof http://localhost:8080/debug/pprof/heap`
 
 Notice: in this example we don't have api, thus there's no obvious report for cpu variation.
+
+## Using FlameGraph
+
+### 1. Clone the repo of FlameGraph
+
+`git clone https://github.com/brendangregg/FlameGraph.git`
+
+### 2. Install go-torch
+
+`go get -v github.com/uber/go-torch`
+
+### 3. If you have running a http-service on 8080, you can...
+
+`go-torch -u http://127.0.0.1:8080/debug/pprof/profile`
+
+go-torch will catch for the activity of your service for 30s.
+Then it will enter go-torch terminal, using `web` and it will generate flamegraph for you.
