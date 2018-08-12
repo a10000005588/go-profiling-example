@@ -10,10 +10,10 @@ https://www.slideshare.net/WilliamLin23/go-profiling-introduction
 
 ### install `graphviz`
 
-In MacOs:
+* In MacOs:
 `brew install graphviz`
 
-In Linux:
+* In Linux:
 `sudo apt-get install -y graphviz`
 
 ## In example 1: count a number by 3 counter running synchronously.
@@ -46,7 +46,7 @@ Here are some useful instructions:
 
 * text :  ：shows the cpu report in text form.
 * web：visualize graph  through web browser.
-* top <n>： list the n highest entries in text form.
+* top  \<n\>： list the n highest entries in text form.
 * list <function name>：reveal the running time of function.
 
 ## In example 2: count a number by 3 counter running asychronously with goroutine (race condition).
