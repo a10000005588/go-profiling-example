@@ -84,6 +84,10 @@ Notice: in this example we don't have api, thus there's no obvious report for cp
 
 `git clone https://github.com/brendangregg/FlameGraph.git`
 
+In FlameGraph directory, add the flamegraph.pl to your /bin .
+
+`cp flamegraph.pl /usr/local/bin` (MacOS)
+
 ### 2. Install go-torch
 
 `go get -v github.com/uber/go-torch`
