@@ -12,18 +12,17 @@ type counter struct {
 	count int
 }
 
-var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
+var memprofile = flag.String("memprofile", "", "write cpu profile to file")
 
 func main() {
 	flag.Parse()
 
-	f, err := os.Create(*cpuprofile)
+	f, err := os.Create(*memprofile)
 	if err != nil {
 		panic(err)
 	}
 
-	pprof.StartCPUProfile(f)     // 開始CPU profiling
-	defer pprof.StopCPUProfile() // 在main結束後執行StopCPUProfile
+	pprof.WriteHeapProfile(f) // start memory profiling
 
 	var wg sync.WaitGroup
 	wg.Add(3)
