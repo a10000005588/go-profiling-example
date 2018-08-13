@@ -47,7 +47,7 @@ Here are some useful instructions:
 * text :  ：shows the cpu report in text form.
 * web：visualize graph  through web browser.
 * top  \<n\>： list the n highest entries in text form.
-* list <function name>：reveal the running time of function.
+* list \<function name\>：reveal the running time of function.
 
 ## In example 2: count a number by 3 counter running asychronously with goroutine (race condition).
 
@@ -72,11 +72,13 @@ you can check your service status via:
 
 [http://127.0.0.1:8080/debug/pprof](http://127.0.0.1:8080/debug/pprof "Title")
 
-### 3. check memory usage via pprof
+### 3. check usage via pprof
 
+`go tool pprof http://localhost:8080/debug/pprof/profile`
 `go tool pprof http://localhost:8080/debug/pprof/heap`
+`go tool pprof http://localhost:8080/debug/pprof/goroutine`
+...
 
-Notice: in this example we don't have api, thus there's no obvious report for cpu variation.
 
 ## Using FlameGraph
 

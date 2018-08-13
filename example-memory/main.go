@@ -34,6 +34,7 @@ func main() {
 	counter.AddBillion2()
 
 	fmt.Println(counter.count)
+	f.Close()
 }
 
 func (c *counter) AddOne() {
